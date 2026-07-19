@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeetMetric | LeetCode Analytics</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <i class="fas fa-code logo-icon"></i>
+                <h1 id="platform-title">LeetCode</h1>
+            </div>
+            <span class="badge"><i class="fas fa-chart-bar"></i> Analytics Dashboard</span>
+        </div>
+
+        <!-- User Input -->
+        <div class="user-container">
+            <p class="input-label"><i class="fas fa-user-astronaut"></i> Enter your LeetCode username below:</p>
+            <div class="user-input-row">
+                <input type="text" id="user-input" placeholder="e.g. johndoe" />
+                <button id="search-btn"><i class="fas fa-search"></i> Search</button>
+            </div>
+            <div class="platform-indicator" id="platform-indicator">
+                <i class="fas fa-check-circle"></i>
+                <span id="indicator-label">Connected to LeetCode API</span>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-container" id="stats-container">
+            <!-- Progress Circles -->
+            <div class="progress">
+                <div class="progress-item">
+                    <div class="circle easy-progress" id="easy-circle">
+                        <span id="easy-label">0/0</span>
+                        <p>Easy</p>
+                    </div>
+                    <span class="diff-label" style="color:#34D399;">EASY</span>
+                </div>
+                <div class="progress-item">
+                    <div class="circle medium-progress" id="medium-circle">
+                        <span id="medium-label">0/0</span>
+                        <p>Medium</p>
+                    </div>
+                    <span class="diff-label" style="color:#FBBF24;">MEDIUM</span>
+                </div>
+                <div class="progress-item">
+                    <div class="circle hard-progress" id="hard-circle">
+                        <span id="hard-label">0/0</span>
+                        <p>Hard</p>
+                    </div>
+                    <span class="diff-label" style="color:#F87171;">HARD</span>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-cards" id="stats-cards">
+                <div class="card">
+                    <h4><i class="fas fa-paper-plane"></i> Total Submissions</h4>
+                    <p id="total-submissions">—</p>
+                    <div class="card-sub">all time</div>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-check-circle"></i> Solved</h4>
+                    <p id="total-solved">—</p>
+                    <div class="card-sub">total accepted</div>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-flag"></i> Attempted</h4>
+                    <p id="total-attempted">—</p>
+                    <div class="card-sub">unique problems</div>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-trophy"></i> Acceptance</h4>
+                    <p id="acceptance-rate">—</p>
+                    <div class="card-sub">% of submissions</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question List Section -->
+        <div class="question-list-container">
+            <h2 id="question-title">
+                <i class="fas fa-list-ul"></i> Solved Problems <span class="count-badge">0</span>
+            </h2>
+            <ul id="question-list">
+                <!-- Populated dynamically by script.js -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
